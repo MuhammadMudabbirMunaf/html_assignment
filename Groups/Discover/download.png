@@ -1,0 +1,833 @@
+
+<!DOCTYPE html>
+<html lang="en-US" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+<head><meta charset="UTF-8" /><script type="text/javascript">(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam-cell.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"9537276cb2",applicationID:"6974453"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n,r){return function(){return s.recordSupportability("API/"+e+"/called"),o(t+e,[u.now()].concat(c(arguments)),n?null:this,r),n?void 0:this}}var o=t("handle"),a=t(10),c=t(11),f=t("ee").get("tracer"),u=t("loader"),s=t(4),d=NREUM;"undefined"==typeof window.newrelic&&(newrelic=d);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",v=l+"ixn-";a(p,function(t,e){d[e]=i(l,e,!0,"api")}),d.addPageAction=i(l,"addPageAction",!0),d.setCurrentRouteName=i(l,"routeName",!0),e.exports=newrelic,d.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(v+"tracer",[u.now(),t,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw f.emit("fn-err",[arguments,this,t],n),t}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(v,e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),s.recordSupportability("API/noticeError/called"),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){var r=!1;try{var i=Object.defineProperty({},"passive",{get:function(){r=!0}});window.addEventListener("testPassive",null,i),window.removeEventListener("testPassive",null,i)}catch(o){}e.exports=function(t){return r?{passive:!0,capture:!!t}:!!t}},{}],4:[function(t,e,n){function r(t,e){var n=[a,t,{name:t},e];return o("storeMetric",n,null,"api"),n}function i(t,e){var n=[c,t,{name:t},e];return o("storeEventMetrics",n,null,"api"),n}var o=t("handle"),a="sm",c="cm";e.exports={constants:{SUPPORTABILITY_METRIC:a,CUSTOM_METRIC:c},recordSupportability:r,recordCustom:i}},{}],5:[function(t,e,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=t(12);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],6:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],7:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?l("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&l("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();if(n.length>0){var r=n[n.length-1];if(u&&u<r.startTime)return;var i=[r],o=a({});o&&i.push(o),l("lcp",i)}}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||l("cls",[t])})}function a(t){var e=navigator.connection||navigator.mozConnection||navigator.webkitConnection;if(e)return e.type&&(t["net-type"]=e.type),e.effectiveType&&(t["net-etype"]=e.effectiveType),e.rtt&&(t["net-rtt"]=e.rtt),e.downlink&&(t["net-dlink"]=e.downlink),t}function c(t){if(t instanceof y&&!w){var e=Math.round(t.timeStamp),n={type:t.type};a(n),e<=v.now()?n.fid=v.now()-e:e>v.offset&&e<=Date.now()?(e-=v.offset,n.fid=v.now()-e):e=v.now(),w=!0,l("timing",["fi",e,n])}}function f(t){"hidden"===t&&(u=v.now(),l("pageHide",[u]))}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var u,s,d,p,l=t("handle"),v=t("loader"),m=t(9),g=t(3),y=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){s=new PerformanceObserver(r);try{s.observe({entryTypes:["paint"]})}catch(h){}d=new PerformanceObserver(i);try{d.observe({entryTypes:["largest-contentful-paint"]})}catch(h){}p=new PerformanceObserver(o);try{p.observe({type:"layout-shift",buffered:!0})}catch(h){}}if("addEventListener"in document){var w=!1,b=["click","keydown","mousedown","pointerdown","touchstart"];b.forEach(function(t){document.addEventListener(t,c,g(!1))})}m(f)}},{}],8:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}e.exports={agent:i,version:o,match:r}},{}],9:[function(t,e,n){function r(t){function e(){t(c&&document[c]?document[c]:document[o]?"hidden":"visible")}"addEventListener"in document&&a&&document.addEventListener(a,e,i(!1))}var i=t(3);e.exports=r;var o,a,c;"undefined"!=typeof document.hidden?(o="hidden",a="visibilitychange",c="visibilityState"):"undefined"!=typeof document.msHidden?(o="msHidden",a="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(o="webkitHidden",a="webkitvisibilitychange",c="webkitVisibilityState")},{}],10:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],11:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],12:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var c=e(i),f=m(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[w[n]];return p&&p.push([b,n,r,c]),c}}function o(t,e){h[t]=m(t).concat(e)}function v(t,e){var n=h[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return h[t]||[]}function g(t){return p[t]=p[t]||i(n)}function y(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var h={},w={},b={on:o,addEventListener:o,removeEventListener:v,emit:n,get:g,listeners:m,context:e,buffer:y,abort:c,aborted:!1};return b}function o(t){return u(t,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=t("gos"),s=t(10),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!P++){var t=M.info=NREUM.info,e=g.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(O,function(e,n){t[e]||(t[e]=n)});var n=a();c("mark",["onload",n+M.offset],null,"api"),c("timing",["load",n]);var r=g.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=v+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===g.readyState&&o()}function o(){c("mark",["domContent",a()+M.offset],null,"api")}var a=t(5),c=t("handle"),f=t(10),u=t("ee"),s=t(8),d=t(6),p=t(2),l=t(3),v=p.getConfiguration("ssl")===!1?"http":"https",m=window,g=m.document,y="addEventListener",h="attachEvent",w=m.XMLHttpRequest,b=w&&w.prototype,E=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:w,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,O={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1215.min.js"},T=w&&b&&b[y]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:T,userAgent:s,disabled:E};if(!E){t(1),t(7),g[y]?(g[y]("DOMContentLoaded",o,l(!1)),m[y]("load",r,l(!1))):(g[h]("onreadystatechange",i),m[h]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var P=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],t)}c(n+"start",[o,a,f],s,u);try{return p=e.apply(a,o)}catch(v){throw c(n+"err",[o,a,v],s,u),v}finally{c(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)f=e[u],c=t[f],a(c)||(t[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!v||e){var c=v;v=!0;try{t.emit(n,r,o,e,a)}catch(f){i([f,n,r,o],t)}v=c}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function c(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function f(t,e,n){var r=t[e];t[e]=c(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(11),p="nr@original",l=Object.prototype.hasOwnProperty,v=!1;e.exports=r,e.exports.wrapFunction=c,e.exports.wrapInPlace=f,e.exports.argsToArray=u},{}]},{},["loader"]);</script><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.userEventHandler=this.triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e.triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick")}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<script type="rocketlazyloadscript">
+            var wpdm_site_url = 'https://www.socialmediaexaminer.com/';
+            var wpdm_home_url = 'https://www.socialmediaexaminer.com/';
+            var ajax_url = 'https://www.socialmediaexaminer.com/wp-admin/admin-ajax.php';
+            var ajaxurl = 'https://www.socialmediaexaminer.com/wp-admin/admin-ajax.php';
+            var wpdm_ajax_url = 'https://www.socialmediaexaminer.com/wp-admin/admin-ajax.php';
+            var wpdm_ajax_popup = '0';
+        </script>
+<title>How to Use Facebook Groups for Business: A Guide for Marketers : Social Media Examiner</title>
+<style type="text/css">
+	.site-header { background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2021/12/SMMW22_Masthead_V2.png)!important; }
+	.site-title a { background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2019/08/logo.png); }
+
+	.main-cta-inner .widget:last-child .textwidget::after {
+		background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2021/05/marketing_cover_2021.png);
+	}
+
+	.above-footer-cta .main-cta-inner .widget:last-child .textwidget::after {
+		background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2021/05/marketing_cover_2021-border.png);
+	}
+
+	.category-cta::after {
+		background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2021/05/marketing_cover_2021.png);
+	}
+	
+	@media screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 1240px), not all, not all, not all, not all, screen and (min-resolution: 192dpi) and (min-width: 1240px), screen and (min-resolution: 2dppx) and (min-width: 1240px) {
+		.site-header { background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2021/12/SMMW22_Masthead_V2@2x.png)!important; }
+		.site-title a { background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2019/08/logo@2x.png); }
+
+	}
+	.header-promo-content { background-color:; }
+	.header-promo-content .promo-title { color:#ffd34c; }
+	.header-promo-content .promo-content { color:#ffffff; }
+	.header-promo-content .button { background-color:#ffd345; color: #0a382d }
+
+
+
+
+	.main-cta-inner .widget:last-child .textwidget::after {
+		background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2021/05/marketing_cover_2021@2x.png);
+	}
+
+	.above-footer-cta .main-cta-inner .widget:last-child .textwidget::after {
+		background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2021/05/marketing_cover_2021-border@2x.png);
+	}
+
+	.category-cta::after {
+		background-image: url(https://www.socialmediaexaminer.com/wp-content/uploads/2021/05/marketing_cover_2021@2x.png);
+	}
+
+	</style><meta name='robots' content='max-image-preview:large' />
+
+<meta name="description" content="Want to use a Facebook group for business? Learn how to create &amp; use Facebook groups to position yourself, find new customers, and more." />
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<link rel="canonical" href="https://www.socialmediaexaminer.com/facebook-groups-for-business-how-to-guide-for-marketers/" />
+<script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://www.socialmediaexaminer.com/#organization","name":"Social Media Examiner","url":"https://www.socialmediaexaminer.com/","sameAs":["https://www.facebook.com/smexaminer","https://www.instagram.com/smexaminer/","https://www.linkedin.com/company/576649","https://www.youtube.com/user/socialmediaexaminer","https://www.pinterest.com/smexaminer/","https://twitter.com/smexaminer"],"logo":{"@type":"ImageObject","@id":"https://www.socialmediaexaminer.com/#logo","inLanguage":"en-US","url":false,"caption":"Social Media Examiner"},"image":{"@id":"https://www.socialmediaexaminer.com/#logo"}},{"@type":"WebSite","@id":"https://www.socialmediaexaminer.com/#website","url":"https://www.socialmediaexaminer.com/","name":"Social Media Examiner | Social Media Marketing","inLanguage":"en-US","description":"Your Guide to the Social Media Jungle","publisher":{"@id":"https://www.socialmediaexaminer.com/#organization"},"potentialAction":[{"@type":"SearchAction","target":"https://www.socialmediaexaminer.com/?s={search_term_string}","query-input":"required name=search_term_string"}]},{"@type":"ImageObject","@id":"https://www.socialmediaexaminer.com/facebook-groups-for-business-how-to-guide-for-marketers/#primaryimage","inLanguage":"en-US","url":"https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/facebook-groups-for-business-guide-for-marketers-600@2x.png","width":1200,"height":630},{"@type":"WebPage","@id":"https://www.socialmediaexaminer.com/facebook-groups-for-business-how-to-guide-for-marketers/#webpage","url":"https://www.socialmediaexaminer.com/facebook-groups-for-business-how-to-guide-for-marketers/","name":"How to Use Facebook Groups for Business: A Guide for Marketers : Social Media Examiner","isPartOf":{"@id":"https://www.socialmediaexaminer.com/#website"},"inLanguage":"en-US","primaryImageOfPage":{"@id":"https://www.socialmediaexaminer.com/facebook-groups-for-business-how-to-guide-for-marketers/#primaryimage"},"datePublished":"2017-07-24T09:00:09+00:00","dateModified":"2018-11-11T16:52:05+00:00","description":"Want to use a Facebook group for business? Learn how to create & use Facebook groups to position yourself, find new customers, and more.","potentialAction":[{"@type":"ReadAction","target":["https://www.socialmediaexaminer.com/facebook-groups-for-business-how-to-guide-for-marketers/"]}]},{"@type":"Article","@id":"https://www.socialmediaexaminer.com/facebook-groups-for-business-how-to-guide-for-marketers/#article","isPartOf":{"@id":"https://www.socialmediaexaminer.com/facebook-groups-for-business-how-to-guide-for-marketers/#webpage"},"author":{"@id":"https://www.socialmediaexaminer.com/#/schema/person/cd4816cd158f17558ae199d5f2aa14b6"},"headline":"How to Use Facebook Groups for Business: A Guide for Marketers","datePublished":"2017-07-24T09:00:09+00:00","dateModified":"2018-11-11T16:52:05+00:00","commentCount":0,"mainEntityOfPage":{"@id":"https://www.socialmediaexaminer.com/facebook-groups-for-business-how-to-guide-for-marketers/#webpage"},"publisher":{"@id":"https://www.socialmediaexaminer.com/#organization"},"image":{"@id":"https://www.socialmediaexaminer.com/facebook-groups-for-business-how-to-guide-for-marketers/#primaryimage"},"keywords":"Facebook","articleSection":"How To","inLanguage":"en-US","potentialAction":[{"@type":"CommentAction","name":"Comment","target":["https://www.socialmediaexaminer.com/facebook-groups-for-business-how-to-guide-for-marketers/#respond"]}]},{"@type":["Person"],"@id":"https://www.socialmediaexaminer.com/#/schema/person/cd4816cd158f17558ae199d5f2aa14b6","name":"Tammy Cannon","image":{"@type":"ImageObject","@id":"https://www.socialmediaexaminer.com/#authorlogo","inLanguage":"en-US","url":"https://secure.gravatar.com/avatar/4f3cd1c9fa936ba1acfaa315fc1cc130?s=96&d=mm&r=g","caption":"Tammy Cannon"},"description":"Tammy Cannon is a digital marketer focusing on helping creative entrepreneurs create successful marketing funnels and Facebook Ads.","sameAs":["https://www.facebook.com/CannonSocialMedia/"]}]}</script>
+
+<link rel='dns-prefetch' href='//www.socialmediaexaminer.com' />
+<link rel='dns-prefetch' href='//ca9707.socialmediaexaminer.com' />
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Social Media Examiner | Social Media Marketing &raquo; Feed" href="https://www.socialmediaexaminer.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Social Media Examiner | Social Media Marketing &raquo; Comments Feed" href="https://www.socialmediaexaminer.com/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Social Media Examiner | Social Media Marketing &raquo; How to Use Facebook Groups for Business: A Guide for Marketers Comments Feed" href="https://www.socialmediaexaminer.com/facebook-groups-for-business-how-to-guide-for-marketers/feed/" />
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.1.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.socialmediaexaminer.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.9.1"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([10084,65039,8205,55357,56613],[10084,65039,8203,55357,56613])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='https://www.socialmediaexaminer.com/wp-includes/css/dist/block-library/style.min.css?ver=5.9.1' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--tan: #ece5b6;--wp--preset--color--yellow: #ffd345;--wp--preset--color--burnt-orange: #C94F31;--wp--preset--color--orange-button: #d5562b;--wp--preset--color--green: #13a082;--wp--preset--color--light-teal: #d2f1eb;--wp--preset--color--maroon: #800000;--wp--preset--color--maroon-button: #ba342b;--wp--preset--color--brown: #31251C;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link rel='stylesheet' id='sme-pro-style-css' href='https://www.socialmediaexaminer.com/wp-content/themes/sme-pro/lib/css/main.css?ver=0.4.6' type='text/css' media='all' />
+<link rel='stylesheet' id='ionicons-css' href='https://www.socialmediaexaminer.com/wp-content/themes/sme-pro/lib/css/ionicons.min.css?ver=0.4.6' type='text/css' media='all' />
+<link rel='stylesheet' id='tablepress-default-css' href='https://www.socialmediaexaminer.com/wp-content/plugins/tablepress/css/default.min.css?ver=1.14' type='text/css' media='all' />
+<style id='tablepress-default-inline-css' type='text/css'>
+@media (max-width:960px){.mobilewidth{width:100%}}
+</style>
+<script type='text/javascript' src='https://www.socialmediaexaminer.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js' defer></script>
+<script type='text/javascript' src='https://www.socialmediaexaminer.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='jquery-js-after'>window.addEventListener('DOMContentLoaded', function() {
+jQuery(document).ready(function() {
+	jQuery(".995cacb76ddc3c3ec3da9e1f90f42311").click(function() {
+		jQuery.post(
+			"https://www.socialmediaexaminer.com/wp-admin/admin-ajax.php", {
+				"action": "quick_adsense_onpost_ad_click",
+				"quick_adsense_onpost_ad_index": jQuery(this).attr("data-index"),
+				"quick_adsense_nonce": "d9e072a2e2",
+			}, function(response) { }
+		);
+	});
+});
+});</script>
+<link rel="https://api.w.org/" href="https://www.socialmediaexaminer.com/wp-json/" /><link rel="alternate" type="application/json" href="https://www.socialmediaexaminer.com/wp-json/wp/v2/posts/133260" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.socialmediaexaminer.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.socialmediaexaminer.com/wp-includes/wlwmanifest.xml" />
+<meta name="generator" content="WordPress 5.9.1" />
+<link rel='shortlink' href='https://www.socialmediaexaminer.com/?p=133260' />
+<link rel="alternate" type="application/json+oembed" href="https://www.socialmediaexaminer.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.socialmediaexaminer.com%2Ffacebook-groups-for-business-how-to-guide-for-marketers%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://www.socialmediaexaminer.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fwww.socialmediaexaminer.com%2Ffacebook-groups-for-business-how-to-guide-for-marketers%2F&#038;format=xml" />
+<link rel="preload" as="font" href="https://www.socialmediaexaminer.com/wp-content/themes/sme-pro/lib/fonts/ionicons.woff2" crossorigin>
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+
+<style>.async-hide { opacity: 0 !important} </style>
+<script type="rocketlazyloadscript">(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+})(window,document.documentElement,'async-hide','dataLayer',4000,
+{'GTM-N8VWT4':true});</script>
+
+<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N8VWT4');</script>
+
+
+<style type="text/css" id="wp-custom-css">
+			body.page-id-139475 li.smmworld_register,
+body.page-id-225659 li.smmworld_register,
+body.page-id-58061 li.smmworld_register,
+body.page-id-24160 li.smmworld_register,
+body.page-id-24587 li.smmworld_register,
+body.page-id-35864 li.smmworld_register,
+body.page-id-58091 li.smmworld_register,
+body.page-id-139475 .header-promo-content .smmw_register_button,
+body.page-id-58061 .header-promo-content .smmw_register_button,
+body.page-id-225659 .header-promo-content .smmw_register_button,
+body.page-id-24160 .header-promo-content .smmw_register_button,
+body.page-id-24587 .header-promo-content .smmw_register_button,
+body.page-id-35864 .header-promo-content .smmw_register_button,
+body.page-id-58091 .header-promo-content .smmw_register_button,
+/* course register page */
+body.page-id-202197 .smmworld_register ,
+body.page-id-202197 .course_four_register_button
+/* course register page end */
+{
+    display: none !important;
+}
+
+/* hide search from mobile menu dropdown */
+@media (max-width:767px){
+	.genesis-responsive-menu ul li#menu-item-219956{
+			display: none !important;
+	}
+}
+
+/* Preventing GSC overlay transition flash on load */
+.gsc-results-wrapper-overlay {
+	transition: none !important;
+}
+
+.header-promo img {
+	z-index: 1;
+}
+/* remove CTA and nav button from thanks page and child pages */
+.page-template-template-coursetwo.conference.page-child .header-promo,
+.page-template-template-coursetwo.conference.page-child .menu a,.page-id-207652.conference.page-child .header-promo,.page-id-207652.conference.page-child .menu a,
+.page-template-template-coursetwo.conference.page-child .sme-top-banner, .page-id-178382 .header-promo, .page-id-178382 .menu a, .page-id-212608 .header-promo, .page-id-212608 .menu a, .page-id-212570 .header-promo, .page-id-212570 .menu a, .page-id-222524 #menu-item-150985, .page-id-222524 .header-promo-content a
+{
+	display:none !important;
+}
+.page-template-template-coursetwo.conference.page-child .menu,.page-id-207652.conference.page-child .header-promo,.page-id-207652.conference.page-child .menu, .page-id-178382 .menu,.page-id-212608 .menu, .page-id-212570 .menu
+	{height:50px}
+/* remove CTA and nav button from thanks page and child pages */
+
+.w3eden .btn-danger {
+	background-color:#ba342b;
+	border-color:#ba342b;
+}
+.addeventatc {z-index:1 !important;}
+
+
+
+.video-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+		margin-bottom: 1em;
+}
+.video-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+/* CTA adjustments 12/20 */
+
+@media (min-width: 1240px) {
+.content-promo-right-top {
+    font-size: 2.6rem !important;
+	}}
+@media (min-width: 1024px) {
+.content-promo-right-top {
+    font-size: 2.6rem !important;
+	}}
+@media (min-width: 1240px){
+.promo-sale-highlight {
+    font-size: 2.6rem !important;
+}}
+@media (min-width: 1024px){
+.promo-sale-highlight {
+    font-size: 2.6rem !important;
+}}
+@media (min-width: 768px){
+.promo-sale-highlight {
+    font-size: 2.4rem !important;
+}}
+/* End CTA adjustments */
+@media (min-width: 768px) {.single-format-standard .entry-header .entry-meta {margin-bottom:30px !important;}}
+.stack-two {
+	width: 50%; float: left;
+}
+@media (max-width: 767px) {
+.stack-two {
+	width: 100%; float: left;
+}}
+.sme-alert-div-tan {padding:25px;}
+
+@media (max-width: 767px){
+.has-top-bar.mobile-header-wrap.mobile-header-conf {
+	top: 41px !important; 
+	}
+}
+
+
+@media (max-width: 767px){
+.has-top-bar .mobile-header-wrap {
+    top: 62px !important;
+	}
+}
+
+@media (max-width: 767px){
+.mobile-header-wrap {
+	top: 0 !important;
+	}
+}
+@media (max-width: 767px){
+.conference .site-inner {
+    margin-top: 20px !important;
+	}
+}
+@media (max-width: 767px){
+.has-top-bar .content-sidebar-wrap {
+    margin-top: 60px;
+} 
+}
+
+li#menu-item-219956 {
+	float: right; 
+}
+
+.club-inline-form {
+    width: 36%;
+    float: left;
+    margin-right: 5px;
+}
+.club-inline-form-button {
+	width:25%;
+	float:left;
+}
+.inline-drip-form {
+	width:100%;
+	margin:auto;
+}
+.inline-drip-form input	 {
+	padding:18px !important;
+}
+@media (max-width: 767px) {
+	.club-inline-form {
+    width: 100%;
+		margin-bottom: 5px;
+	}
+	.club-inline-form-button {
+		width:100%;
+	}
+}
+
+.site-header::after {
+	z-index: 1;
+}
+.home-promo .conference-table-extend {margin-left:0px !important; margin-right:0px !important;}
+
+@media (max-width: 767px) {
+	body>div {font-size:1.9rem !important;}
+}
+
+main#genesis-content {
+    height: auto !important;
+}
+@media (min-width: 960px) {
+.archive.full-width-content .content .entry {
+    font-size: 2rem;
+	}}
+@media (min-width: 769px) {
+.hidethisovermobile {
+    display:none;
+	}}
+
+.sme-cse-count {
+	 font-size: 2rem;
+}
+
+select.sme-cse-select-text {
+    font-size: 2rem;
+}
+
+label.sme-cse-select-label {
+    font-size: 2rem;
+}
+
+a.gs-title {
+    font-size: 2rem;
+}
+
+.gs-bidi-start-align.gs-snippet.sme-cse-snippet {
+    font-size: 2rem !important;
+}
+
+input#gsc-i-id1 {
+    font-size: 2rem;
+}
+@media (max-width:960px) {
+	.conference table.tablepress {
+    min-width: 275px;
+}
+}
+
+.course-four-new .site-header:after {
+	z-index: 9;
+}
+
+/* agenda for world */
+.page-id-145277 .content {
+	max-width:1100px;
+	}
+.page-id-145277 #agenda_banner  {
+	display:none;
+}
+
+.page-id-145277 #agenda_title_119280, .page-id-145277 #agenda_title_119281, .page-id-145277 #agenda_title_119282 {
+	background-color: #311b1c !important;
+}
+
+.page-id-145277 .header_datetime 
+{
+	background-color: #d9e3cd !important;
+}
+.page-id-145277 h1.entry-title{display:none;}
+#agenda .agenda_sub_header {
+    margin-left: 10px !important;
+}
+
+.page-id-231003 .content {
+	max-width:850px;
+	}
+
+@media (max-width:767px) {
+.page-id-231003	.entry-content {
+    margin-top: 75px;
+}
+}
+
+/* agenda for world */
+		</style>
+<meta name="generator" content="WordPress Download Manager 5.0.93" />
+
+
+<meta property="og:site_name" content="Social Media Examiner | Social Media Marketing" />
+<meta property="og:title" content="How to Use Facebook Groups for Business: A Guide for Marketers : Social Media Examiner" />
+<meta property="og:url" content="https://www.socialmediaexaminer.com/facebook-groups-for-business-how-to-guide-for-marketers/" />
+<meta property="og:type" content="article" />
+<meta property="og:description" content="Want to use a Facebook group for business? Learn how to create &amp; use Facebook groups to position yourself, find new customers, and more." />
+<meta property="og:image" content="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/facebook-groups-for-business-guide-for-marketers-600@2x.png" />
+<meta property="og:image:url" content="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/facebook-groups-for-business-guide-for-marketers-600@2x.png" />
+<meta property="og:image:secure_url" content="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/facebook-groups-for-business-guide-for-marketers-600@2x.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="article:author" content="https://www.facebook.com/CannonSocialMedia/" />
+<meta property="article:publisher" content="https://www.facebook.com/smexaminer" />
+<meta property="fb:app_id" content="417952779368030" />
+
+
+<meta name="twitter:title" content="How to Use Facebook Groups for Business: A Guide for Marketers : Social Media Examiner" />
+<meta name="twitter:url" content="https://www.socialmediaexaminer.com/facebook-groups-for-business-how-to-guide-for-marketers/" />
+<meta name="twitter:description" content="Want to use a Facebook group for business? Learn how to create &amp; use Facebook groups to position yourself, find new customers, and more." />
+<meta name="twitter:image" content="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/facebook-groups-for-business-guide-for-marketers-600@2x.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@smexaminer" />
+
+
+
+
+<style>
+        /* WPDM Link Template Styles */
+
+
+
+        </style>
+<style>
+
+            :root {
+                --color-primary: #4a8eff;
+                --color-primary-rgb: 74, 142, 255;
+                --color-primary-hover: #4a8eff;
+                --color-primary-active: #4a8eff;
+                --color-secondary: #6c757d;
+                --color-secondary-rgb: 108, 117, 125;
+                --color-secondary-hover: #6c757d;
+                --color-secondary-active: #6c757d;
+                --color-success: #18ce0f;
+                --color-success-rgb: 24, 206, 15;
+                --color-success-hover: #18ce0f;
+                --color-success-active: #18ce0f;
+                --color-info: #2CA8FF;
+                --color-info-rgb: 44, 168, 255;
+                --color-info-hover: #2CA8FF;
+                --color-info-active: #2CA8FF;
+                --color-warning: #FFB236;
+                --color-warning-rgb: 255, 178, 54;
+                --color-warning-hover: #FFB236;
+                --color-warning-active: #FFB236;
+                --color-danger: #ff5062;
+                --color-danger-rgb: 255, 80, 98;
+                --color-danger-hover: #ff5062;
+                --color-danger-active: #ff5062;
+                --color-green: #30b570;
+                --color-blue: #0073ff;
+                --color-purple: #8557D3;
+                --color-red: #ff5062;
+                --color-muted: rgba(69, 89, 122, 0.6);
+                --wpdm-font:  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            }
+
+            .wpdm-download-link.btn.btn-danger.btn-lg {
+                border-radius: 4px;
+            }
+
+
+        </style>
+<script async src='/cdn-cgi/bm/cv/669835187/api.js'></script></head>
+<body class="post-template-default single single-post postid-133260 single-format-standard wp-embed-responsive header-full-width full-width-content-narrow genesis-breadcrumbs-hidden genesis-footer-widgets-visible"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-dark-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 0.49803921568627" /><feFuncG type="table" tableValues="0 0.49803921568627" /><feFuncB type="table" tableValues="0 0.49803921568627" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-grayscale"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-red"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 1" /><feFuncG type="table" tableValues="0 0.27843137254902" /><feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-midnight"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0 0" /><feFuncG type="table" tableValues="0 0.64705882352941" /><feFuncB type="table" tableValues="0 1" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-magenta-yellow"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.78039215686275 1" /><feFuncG type="table" tableValues="0 0.94901960784314" /><feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-green"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" /><feFuncG type="table" tableValues="0 1" /><feFuncB type="table" tableValues="0.44705882352941 0.4" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-orange"><feColorMatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " /><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="0.098039215686275 1" /><feFuncG type="table" tableValues="0 0.66274509803922" /><feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" /><feFuncA type="table" tableValues="1 1" /></feComponentTransfer><feComposite in2="SourceGraphic" operator="in" /></filter></defs></svg><div class="site-container"><ul class="genesis-skip-link"><li><a href="#genesis-nav-primary" class="screen-reader-shortcut"> Skip to primary navigation</a></li><li><a href="#genesis-content" class="screen-reader-shortcut"> Skip to main content</a></li><li><a href="#genesis-sidebar-primary" class="screen-reader-shortcut"> Skip to primary sidebar</a></li><li><a href="#genesis-footer-widgets" class="screen-reader-shortcut"> Skip to footer</a></li></ul><header class="site-header"><div class="wrap"><div class="mobile-header-wrap"><div class="title-area"><p class="site-title"><a href="https://www.socialmediaexaminer.com/">Social Media Examiner | Social Media Marketing</a></p><p class="site-description">Your Guide to the Social Media Jungle</p></div><nav class="nav-primary" aria-label="Main" id="genesis-nav-primary"><div class="wrap"><ul id="menu-top-menu" class="menu genesis-nav-menu menu-primary js-superfish"><li id="menu-item-12822" class="main menu-item menu-item-type-post_type menu-item-object-page menu-item-12822"><a title="Never miss any of our content!" href="https://www.socialmediaexaminer.com/subscribe/"><span>🔥 Free Newsletter</span></a></li>
+<li id="menu-item-222825" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-222825"><a title="Social Media Marketing World" href="https://www.socialmediaexaminer.com/smmworld/?smesite=world22-site-navbar-conference"><span>☀️ Conference</span></a></li>
+<li id="menu-item-228928" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-228928"><a title="Recommended marketing software" href="https://www.socialmediaexaminer.com/tools/?smesite=toolspage-site-navbar-tools"><span>Tools</span></a></li>
+<li id="menu-item-221650" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-221650"><a title="Get ongoing social marketing training" href="https://www.socialmediaexaminer.com/society/?smesite=societyevergreen-site-navbar"><span>Society</span></a></li>
+<li id="menu-item-12806" class="main menu-item menu-item-type-post_type menu-item-object-page menu-item-12806"><a title="Check out these social media events" href="https://www.socialmediaexaminer.com/upcoming-events/"><span>Events</span></a></li>
+<li id="menu-item-23650" class="main menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-23650"><a title="Discover our weekly shows" href="https://www.socialmediaexaminer.com/shows/"><span>Shows</span></a>
+<ul class="sub-menu">
+<li id="menu-item-167681" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-167681"><a title="Top Marketing Podcast" href="https://www.socialmediaexaminer.com/social-media-marketing-podcast/"><span>Social Media Marketing Podcast</span></a></li>
+<li id="menu-item-163520" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-163520"><a title="Weekly live show and podcast" href="https://www.socialmediaexaminer.com/social-media-marketing-talk-show/"><span>Social Media Marketing Talk Show</span></a></li>
+<li id="menu-item-229603" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-229603"><a title="Explore the Web 3.0 frontier" href="https://www.socialmediaexaminer.com/crypto-business-podcast/"><span>Crypto Business Podcast</span></a></li>
+<li id="menu-item-193628" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-193628"><a title="Original videos each week" href="https://www.youtube.com/socialmediaexaminer?sub_confirmation=1" class="external" target="_blank"><span>Our YouTube Channel</span></a></li>
+</ul>
+</li>
+<li id="menu-item-219562" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-219562"><a title="Explore our written and video content for marketers" href="#"><span>Articles &#038; Videos</span></a>
+<ul class="sub-menu">
+<li id="menu-item-163511" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-163511"><a title="Rich content for marketers" href="#"><span>Articles</span></a>
+<ul class="sub-menu">
+<li id="menu-item-163512" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-has-children menu-item-163512"><a title="Discover the latest tactics" href="https://www.socialmediaexaminer.com/category/how-to/"><span>How To</span></a>
+<ul class="sub-menu">
+<li id="menu-item-167676" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-167676"><a href="https://www.socialmediaexaminer.com/tag/instagram/"><span>Instagram Marketing</span></a></li>
+<li id="menu-item-167675" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-167675"><a href="https://www.socialmediaexaminer.com/tag/facebook-ads/"><span>Facebook Ads</span></a></li>
+<li id="menu-item-167673" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-167673"><a href="https://www.socialmediaexaminer.com/tag/facebook/"><span>Facebook Marketing</span></a></li>
+<li id="menu-item-167678" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-167678"><a href="https://www.socialmediaexaminer.com/tag/youtube/"><span>YouTube Marketing</span></a></li>
+<li id="menu-item-221030" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-221030"><a href="https://www.socialmediaexaminer.com/tag/youtube-ads/"><span>YouTube Ads</span></a></li>
+<li id="menu-item-167677" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-167677"><a href="https://www.socialmediaexaminer.com/tag/linkedin/"><span>LinkedIn Marketing</span></a></li>
+<li id="menu-item-178106" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-178106"><a href="https://www.socialmediaexaminer.com/tag/tiktok/"><span>TikTok Marketing</span></a></li>
+<li id="menu-item-215017" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-215017"><a href="https://www.socialmediaexaminer.com/tag/clubhouse/"><span>Clubhouse</span></a></li>
+</ul>
+</li>
+<li id="menu-item-182387" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-182387"><a href="https://www.socialmediaexaminer.com/category/view-points/"><span>View Points</span></a></li>
+<li id="menu-item-163513" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-163513"><a title="Learn from experts" href="https://www.socialmediaexaminer.com/category/expert-interviews/"><span>Expert Interviews</span></a></li>
+<li id="menu-item-163514" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-163514"><a title="Discover helpful tools" href="https://www.socialmediaexaminer.com/category/tools/"><span>Tools</span></a></li>
+</ul>
+</li>
+<li id="menu-item-204594" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-204594"><a title="Check out our video tutorials" href="https://www.youtube.com/socialmediaexaminer?sub_confirmation=1" class="external" target="_blank"><span>Video Tutorials</span></a>
+<ul class="sub-menu">
+<li id="menu-item-204595" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-204595"><a href="https://www.youtube.com/watch?v=bgNmS2Pdooc&#038;list=PLyqdnWmgSb_ZdMIrpffuFf9eNlFUVN_l0" class="external" target="_blank"><span>Instagram Marketing</span></a></li>
+<li id="menu-item-215034" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-215034"><a href="https://www.youtube.com/watch?v=9XrQM7p-aQg&#038;list=PLyqdnWmgSb_ah86dGUZMOf0rknNutskbL&#038;index=1" class="external" target="_blank"><span>Instagram Ads</span></a></li>
+<li id="menu-item-215019" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-215019"><a href="https://www.youtube.com/playlist?list=PLyqdnWmgSb_a49AhGFDVQXVMcnzYL_TQb" class="external" target="_blank"><span>Facebook Marketing</span></a></li>
+<li id="menu-item-204597" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-204597"><a href="https://www.youtube.com/watch?v=N8M5-FqJw-o&#038;list=PLyqdnWmgSb_a49AhGFDVQXVMcnzYL_TQb&#038;index=1" class="external" target="_blank"><span>Facebook Ads</span></a></li>
+<li id="menu-item-204599" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-204599"><a href="https://www.youtube.com/watch?v=j2FS5-Kh1xY&#038;list=PLyqdnWmgSb_ajPnCIRsJFtUQ-KuSBE3Mn&#038;index=1" class="external" target="_blank"><span>LinkedIn Ads</span></a></li>
+<li id="menu-item-204598" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-204598"><a href="https://www.youtube.com/watch?v=74TBuT7lZSE&#038;list=PLyqdnWmgSb_ZT8ZIQw8i5hREskurr1BzI&#038;index=1" class="external" target="_blank"><span>TikTok</span></a></li>
+<li id="menu-item-215018" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-215018"><a href="https://www.youtube.com/watch?v=o7gv7U-rZl8&#038;list=PLyqdnWmgSb_ZPcCYKqK1ZNZl5VlWKn72E&#038;index=1" class="external" target="_blank"><span>Clubhouse</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-213565" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-213565"><a title="Get your business in front of our audience" href="https://www.socialmediaexaminer.com/sponsor/"><span>Sponsor</span></a>
+<ul class="sub-menu">
+<li id="menu-item-213566" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-213566"><a title="Get your business on our podcast!" href="https://www.socialmediaexaminer.com/sponsor/podcast/"><span>Podcast Sponsorship</span></a></li>
+<li id="menu-item-218507" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-218507"><a href="https://www.socialmediaexaminer.com/sponsor/email/"><span>Email Sponsorship</span></a></li>
+<li id="menu-item-225158" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-225158"><a href="https://www.socialmediaexaminer.com/smmworld/sponsoroptions/"><span>Event Sponsorship</span></a></li>
+</ul>
+</li>
+<li id="menu-item-12808" class="main menu-item menu-item-type-post_type menu-item-object-page menu-item-12808"><a title="All about Social Media Examiner" href="https://www.socialmediaexaminer.com/about/"><span>About</span></a></li>
+<li id="menu-item-219956" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-219956"><a href="/search-site"><span><i class="icon ion-ios-search"></i></span></a></li>
+</ul></div></nav><li class="mobile-search-header"><a href="/search-site/">Search</a></li></div><div class="header-promo no-image"><a href="https://www.socialmediaexaminer.com/smmworld/?smesite=world22-site-masthead" class="promo-image"><img src="" /></a><div class="header-promo-content"><span class="promo-title">Get Your Tickets Now!</span><span class="promo-content">Social Media Marketing World sale ends Wednesday!</span><a href="https://www.socialmediaexaminer.com/smmworld/?smesite=world22-site-masthead" class="button">LEARN FROM PROS</a></div></div></div></header><div class="site-inner"><div class="content-sidebar-wrap"><main class="content" id="genesis-content"><article class="post-133260 post type-post status-publish format-standard has-post-thumbnail category-how-to tag-facebook entry" aria-label="How to Use Facebook Groups for Business: A Guide for Marketers"><header class="entry-header"><h1 class="entry-title">How to Use Facebook Groups for Business: A Guide for Marketers</h1>
+<p class="entry-meta"><img alt='' src='https://secure.gravatar.com/avatar/4f3cd1c9fa936ba1acfaa315fc1cc130?s=35&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/4f3cd1c9fa936ba1acfaa315fc1cc130?s=70&#038;d=mm&#038;r=g 2x' class='avatar avatar-35 photo' height='35' width='35' loading='lazy' /><i class="byline">by</i> <span class="entry-author"><a href="https://www.socialmediaexaminer.com/author/tammy-cannon/" class="entry-author-link" rel="author"><span class="entry-author-name">Tammy Cannon</span></a></span> / <time class="entry-time">July 24, 2017</time></p></header><div class="entry-content"><p><a href="https://www.socialmediaexaminer.com/category/how-to/" target="_blank" rel="noopener"><img class="alignright" style="margin-left: 5px; margin-right: 5px;" title="social media how to" src="https://www.socialmediaexaminer.com/images/how-to-pose.png" alt="social media how to" width="190" height="166" /></a>Want to use a Facebook group for business?</p>
+<p>Wondering how to promote your products and services in Facebook groups?</p>
+<p>Whether you create a Facebook group or join one managed by someone else, you can use groups to position yourself, find new customers, and more.</p>
+<p>In this article, you&#8217;ll <strong>discover how to use Facebook groups to support and market your business</strong>.</p>
+<figure style="width: 600px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/facebook-groups-for-business-guide-for-marketers-600.png" alt="How to Use Facebook Groups for Business: A Guide for Marketers by Tammy Cannon on Social Media Examiner." width="600" height="315" /><figcaption class="wp-caption-text">How to Use Facebook Groups for Business: A Guide for Marketers by Tammy Cannon on Social Media Examiner.</figcaption></figure>
+<p><span id="more-133260"></span></p>
+<h2>Why Should I Join Facebook Groups for Business?</h2>
+<p><a href="https://www.socialmediaexaminer.com/marketing-your-business-on-facebook-how-to-choose-between-profiles-pages-and-groups">Facebook groups</a> bring together individuals who share a common interest. When you <strong>join a group that&#8217;s made up of people who match your target customer</strong>, you&#8217;ll have multiple opportunities to improve awareness of yourself and your business by being helpful.</p>
+<p>To reveal those opportunities, simply <strong>type a keyword or topic into the search box</strong> on the right-hand menu of the group&#8217;s page.</p>
+<figure style="width: 300px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/Search-Groups.png" alt="If you type the search term " width="300" height="477" /><figcaption class="wp-caption-text">If you type the search term &#8220;Facebook ads&#8221; inside a group, you can see all posts related to that topic.</figcaption></figure>
+<p>You&#8217;ll see that people are asking a lot of questions inside groups. <strong>Find the questions that will let you demonstrate your expertise or specialized skills</strong>. You can <strong>answer the questions outright</strong>, <strong>share a helpful blog post</strong>, or even <strong>mention your own products and services</strong>.</p>
+<figure style="width: 600px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/Facebook-Ads-Search.png" alt="Posts like this one are a perfect opportunity to provide a solution to another group member." width="600" height="177" /><figcaption class="wp-caption-text">Posts like this one are a perfect opportunity to provide a solution to another group member.</figcaption></figure>
+<p>This kind of marketing is very powerful because it&#8217;s highly targeted. People need answers to their questions and if you can <strong>provide solutions on a regular basis</strong>, you and your business will start to become top of mind with members of the group. People may even start to look to you for answers by tagging you in comments.</p>
+<p>You can also <strong>use these searches to gather FAQs and create original content</strong> for your potential customers.</p>
+<h2>How Do I Find Groups on Facebook?</h2>
+<p>Think of groups run by other people as mini-communities. There&#8217;s a group for virtually anything and everything, and you can join up to 6,000 groups. Here&#8217;s how you can join a Facebook group or two, and engage daily with other members.</p>
+<p><strong>Log into your Facebook personal profile</strong> account and <strong>find Groups</strong> on the left-hand side of your Home page in the Explore section.</p>
+<figure style="width: 300px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/Access-groups.png" alt="Access Facebook Groups from the Explore section of your Facebook personal profile." width="300" height="426" /><figcaption class="wp-caption-text">Access Facebook Groups from the Explore section of your Facebook personal profile.</figcaption></figure>
+<p>Once you <strong>click on the Groups tab</strong>, you&#8217;ll automatically be sent to the Discover Groups landing page. This is where Facebook suggests groups for you based on criteria such as pages you&#8217;ve liked, groups your friends are members of, and so on. Facebook will also let you see which of your friends are members of the groups suggested to you.</p>
+<figure style="width: 600px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/Group-Discover-Page.png" alt="Browse the Discover Groups page to find groups that will likely include people matching your target customer." width="600" height="336" /><figcaption class="wp-caption-text">Browse the Discover Groups page to find groups that will likely include people matching your target customer.</figcaption></figure>
+<p>As you browse through the suggested Facebook groups, you&#8217;ll see both public and closed groups.</p><div class="995cacb76ddc3c3ec3da9e1f90f42311" data-index="1" style="float: none; margin:10px 0 10px 0; text-align:center;">
+<div class="conference-table-extend">
+<h2 style="text-align: left;">Does Your Marketing Strategy Need an Upgrade?</h2>
+<img class="alignright wp-image-216272 size-medium" src="https://www.socialmediaexaminer.com/wp-content/uploads/2021/12/SMMW20_2144IMG_2144-scaled.jpg" alt="Social Media Marketing World" width="250" height="250" />
+<p style="text-align: left;">It’s 2022 and all of your hard-won strategies have gone out the window. You need a new plan and that’s where Social Media Marketing World comes in.</p>
+<p style="text-align: left;">Over the three-day event, you’ll discover how to leverage the newest social marketing techniques so you can become a superstar for your company or clients. No pitching. No gimmicks. Just world-class training from experts you respect.</p>
+<a class="button button-2" href="https://www.socialmediaexaminer.com/smmworld/?smesite=world22-site-midpage-ad1">UPGRADE YOUR STRATEGY</a>
+</div>
+</div>
+<figure style="width: 600px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/closed-facebook-group-description.png" alt="Hover over any group name to see whether it's an open or closed group." width="600" height="387" /><figcaption class="wp-caption-text">Hover over any group name to see whether it&#8217;s an open or closed group.</figcaption></figure>
+<p><strong>Click on any group</strong> to learn more about it by reading the description to <strong>understand the group&#8217;s mission</strong>. <strong>Be sure you&#8217;re a fit before you ask to join</strong>.</p>
+<p>Many group owners will also post specific rules for engaging inside the group. Rules are often posted in the Description area or in a post that&#8217;s been pinned to the top of the timeline. It&#8217;s important to <strong>read the rules</strong> so you don&#8217;t get barred from the group.</p>
+<figure style="width: 300px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/facebook-group-rules-example.png" alt="Here's an example of Facebook group rules." width="300" height="371" /><figcaption class="wp-caption-text">Here&#8217;s an example of Facebook group rules.</figcaption></figure>
+<p>Once you find a group to join, just <strong>click the Join button</strong>. Be aware that some groups, like this one, will ask you to <strong>answer a few entry questions before sending your request</strong> along to the group owner.</p>
+<figure style="width: 600px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/Join-Group.png" alt="Some group owners will ask you to answer some pre-qualifying questions when you join." width="600" height="710" /><figcaption class="wp-caption-text">Some group owners will ask you to answer some pre-qualifying questions when you join.</figcaption></figure>
+<p>After you answer the questions, you&#8217;ll get a message letting you know that your request is pending and you&#8217;ll get a notification when your request to join has been approved.</p>
+<figure style="width: 600px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/Join-notification.png" alt="You'll get a notification that your request to join a group has been received." width="600" height="210" /><figcaption class="wp-caption-text">You&#8217;ll get a notification that your request to join a group has been received.</figcaption></figure>
+<p>When the group is opened to you, spend some time looking through the posts to get a feel for how it operates. Once you <strong>understand the tone of conversation, and the way other members ask and answer questions or offer advice</strong>, you&#8217;ll be able to successfully do the same.</p>
+<h2>Why Should I Create My Own Facebook Group?</h2>
+<p>While participating in Facebook groups managed by others can help you promote your brand and business, you have to play by others&#8217; rules. Managing a dedicated Facebook group of your own lets you <strong>control the entire group experience</strong> and <strong>use your group for a specific purpose</strong>.</p>
+<p>Before you begin to build your group on Facebook, you need to <strong>decide why and how you&#8217;ll use the group</strong>. Here are four ways groups are commonly used by business owners.</p>
+<p><strong>Create Community Around Products</strong>: Many groups are created by businesses as a bonus when somebody buys their product or service. Creating communities around the products and services you sell makes members feel exclusive and provides an area where they can get additional help and training from you.</p>
+<figure style="width: 600px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/facebook-group-for-instapot.png" alt="Groups like this one let you create community around your product." width="600" height="181" /><figcaption class="wp-caption-text">Groups like this one let you create community around your product.</figcaption></figure>
+<p><strong>Establish Authority</strong>: Create a group for email subscribers to further inspire and educate them with helpful posts and prompts. Share helpful articles, tips, tricks, and even tutorials in the group to help improve members&#8217; lives and businesses.</p>
+<p><strong>Create a Topic-Focused Community</strong>: Rather than using your business name to identify your group, give it a name that reflects a specific topic on which you&#8217;re an expert; for example, Social Media for Health Care Providers. This will draw people who are interested in that topic.</p>
+<p>Once you&#8217;ve decided how and why you&#8217;ll use your group, you can start to build it.</p>
+<h2>#1: Create a Facebook Group for Business</h2>
+<p><strong>Click on Create a Group</strong> on the main Group page we accessed from the left-hand side of your <a href="https://www.socialmediaexaminer.com/how-to-use-a-facebook-personal-profile-for-business-a-guide-for-marketers">Facebook personal profile</a>. You&#8217;ll then see a screen where you <strong>give your group a name</strong>, <strong>add people</strong>, and <strong>set the group&#8217;s privacy level</strong>.</p>
+<p>You&#8217;ll need to <strong>add at least one person to your group before you can create it</strong>. Choose someone who knows you&#8217;re building the group but will keep it under wraps until you&#8217;re ready to launch.</p>
+<figure style="width: 600px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/Create-Group.png" alt="Give your group a name, add people, and decide on the privacy setting." width="600" height="529" /><figcaption class="wp-caption-text">Give your group a name, add people, and decide on the privacy setting.</figcaption></figure>
+<p>Facebook groups can be public, closed, or secret, depending on the goal of your business. The descriptions below can help you decide which is right for you.</p>
+<p><strong>Public Facebook Groups</strong>: Anyone can join and everyone can see the group posts. Public groups can attract people who join simply to spam other members with their own content. If you decide to build a Facebook group community around a certain topic or event, a public group may work well.</p><div class="995cacb76ddc3c3ec3da9e1f90f42311" data-index="9" style="float: none; margin:10px 0 10px 0; text-align:center;">
+<div class="conference-table-extend">
+<h2 style="text-align: left;">3 Days of World-Class Training—Zero Travel</h2>
+<img class="alignright wp-image-216272 size-medium" src="https://www.socialmediaexaminer.com/wp-content/uploads/2021/12/SMMW2020-5242-scaled.jpg" alt="Social Media Marketing World" width="285" height="190" />
+<p style="text-align: left;">Want to take your marketing to the next level, but can’t justify flying across the country (or the world) for training?</p>
+<p style="text-align: left;">With the On-Demand ticket to Social Media Marketing World, you'll grow your career with world-class training from experts you respect—at your coffee table or in your office. Enjoy hours of actionable content that you can watch anytime, anywhere. It’s a no-brainer…and you can even do it in your jammies, if that’s your thing.</p>
+<a class="button button-2" href="https://www.socialmediaexaminer.com/smmworld/on-demand/?smesite=world22-site-midpage-ad-text-od">GET STARTED</a>
+</div>
+</div>
+<p><strong>Closed Groups</strong>: Anyone can ask to join, but requests have to be accepted by a group administrator. If you&#8217;re not a member of a closed group, you won&#8217;t be able to see group posts. This is helpful because you can educate your members with tutorials without giving everyone the ability to see your training. The closed group is the most popular for business.</p>
+<p><strong>Secret Groups</strong>: Only members will see group posts and the group can&#8217;t be found in search. Secret groups are a great way to establish the authority of your business. Secret groups are for very specific members and are often centralized around a service you provide like high-level coaching. You can even have people pay a monthly fee to join your group.</p>
+<p>After you choose your privacy settings, <strong>click Create</strong> and your new group will be ready for you to <strong>load images, details, and settings preferences</strong>.</p>
+<h2>#2: Customize Your Facebook Group</h2>
+<p><strong>Add a cover photo</strong> that&#8217;s 828 x 315 pixels. When the image shows on the group&#8217;s timeline, <strong>click on it</strong> to <strong>create a thorough description and the rules</strong> for your group.</p>
+<figure style="width: 600px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/facebook-group-cover-photo-1.png" alt="Add a cover photo that represents the focus of your group." width="600" height="216" /><figcaption class="wp-caption-text">Add a cover photo that represents the focus of your group.</figcaption></figure>
+<p>Now <strong>click on the &#8216;…&#8217; button</strong> to <strong>complete the Settings options</strong> for your group.</p>
+<p><strong>Decide on the Group Type</strong></p>
+<p>The type of Facebook group designation you choose will depend on its purpose. Will you educate people, provide customer support, or create a group around an event for your business?</p>
+<p><strong>Choose the right Facebook group type</strong> to let Facebook know how to categorize your group for search results.</p>
+<figure style="width: 600px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/Type-of-Group.png" alt="Choose a group type that reflects how you want to be categorized in search." width="600" height="304" /><figcaption class="wp-caption-text">Choose a group type that reflects how you want to be categorized in search.</figcaption></figure>
+<p>After choosing a group type, <strong>complete the Description, Tags, Locations, and Web and Email Address settings</strong>.</p>
+<p>When your group looks the way you want it, it&#8217;s time to <strong>add three to five posts</strong> so new members have something to read. <strong>Make sure one of those posts is a set of rules</strong> members should keep in mind, then <strong>pin that post to the top of your timeline</strong>. This will help you save time because the rules are clear and agreed upon.</p>
+<h2>#3: Invite People to Join Your Group</h2>
+<p>Now that your group is up and running with a few posts, it&#8217;s time to invite people to the group.</p>
+<p>Depending on the type of group you created, <strong>decide if your personal friends would be a good fit</strong>. Do you own a local restaurant? Invite your family and friends to the group to showcase new menu items, events, and so forth.</p>
+<p>For many business owners, friends and family are not paying customers. While they would be happy to support you, you may want to keep them out of the group. <strong>Focus on people your group serves</strong> and <strong>find out where they are</strong>.</p>
+<figure style="width: 600px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/facebook-group-invitation-on-website.png" alt="Invite website visitors to join your Facebook group." width="600" height="401" /><figcaption class="wp-caption-text">Invite website visitors to join your Facebook group.</figcaption></figure>
+<p>Here are a few options for you to consider:</p>
+<ul>
+<li>Add an invitation for website visitors to join your group.</li>
+<li>Send your email subscribers an email introducing your new group and give them a link to the group&#8217;s page.</li>
+<li>Share the link to your new group on all of the social media platforms you&#8217;re active on.</li>
+<li>Add a social button on your website that takes people to your group&#8217;s Facebook page to join.</li>
+<li>Include an invitation to join your group on the thank-you page for your lead magnet.</li>
+</ul>
+<h2>#4: Curate Content for Your Group</h2>
+<p>Before launching your Facebook group, take some time to <strong>define a long-term content strategy that supports the group&#8217;s goal</strong>. For example, is the goal of your group to sell to members? Do you want to create a support group for people who&#8217;ve already purchased from you?</p>
+<p>You&#8217;ll also need to <strong>decide what type of content you&#8217;ll serve</strong>. Will you provide inspirational, educational, or entertaining content? Will you prompt group members to engage?</p>
+<figure style="width: 600px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/facebook-group-content.png" alt="A long-term plan and content strategy will make your group successful." width="600" height="400" /><figcaption class="wp-caption-text">Remember, groups rely on engaged members, and a long-term plan and content strategy will make your group successful.</figcaption></figure>
+<p><strong>Finding Content for Your Group</strong></p>
+<p>If every post you publish brings value to the group, members will be more likely to engage with your content. Here are a few places to find trending or interesting <a href="https://www.socialmediaexaminer.com/how-to-use-trello-to-manage-your-facebook-group-posts/">content to share</a> with your members.</p>
+<ul>
+<li><strong>Buzzsumo.com</strong>: Buzzsumo <strong>shows users what topics are trending</strong> in the moment. You can also search <strong>specific topics</strong> related to your group to <strong>find the most popular articles and which social media platform they were shared on</strong>. Here&#8217;s what Buzzsumo comes up with when I type in &#8220;social media marketing.&#8221; These are the top three articles in the past week. I can share this popular content inside my group to support and educate members.</li>
+</ul>
+<figure style="width: 600px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/Buzzsumo.png" alt="Use Buzzsumo to find relevant topics to share with your group." width="600" height="200" /><figcaption class="wp-caption-text">Use Buzzsumo to find relevant topics to share with your group.</figcaption></figure>
+<ul>
+<li><strong>Google News</strong>: The quickest way to find the most recent articles to share with your group members is to <strong>type your search query into Google</strong> and then <strong>select News</strong> to <strong>filter the most recent articles</strong>. Sharing relevant and recent content establishes you as the expert for the group.</li>
+</ul>
+<figure style="width: 600px" class="wp-caption alignnone"><img loading="lazy" src="https://www.socialmediaexaminer.com/wp-content/uploads/2017/07/Google-News.png" alt="Browse Google News search results to find timely content that will keep your group members informed." width="600" height="345" /><figcaption class="wp-caption-text">Browse Google News search results to find timely content that will keep your group members informed.</figcaption></figure>
+<ul>
+<li><strong>Industry awareness</strong>: <strong>Listen to podcast episodes</strong> about your group&#8217;s topic and <strong>continue to stay up to date with other types of content</strong> your group members might like.</li>
+</ul>
+<p>Above all, read and comment on member questions and interactions with other members.</p>
+<h2>#5: Encourage Members to Engage</h2>
+<p>If you want to create a successful group for your business, make sure to <strong>post things that will spark interaction with your content or among group members</strong>. Use these six ideas to create and deliver custom content for your own group.</p>
+<ul>
+<li><strong>Challenges</strong>: Challenges have become a very popular activity inside groups. Do you provide a consulting service? Design a challenge and invite members to join it. At the end of the challenge, invite them to work with you one on one if they&#8217;re ready to take their learning to the next level.</li>
+<li><strong>Tutorials</strong>: Tutorials are a great way to continue establishing your business as the leader in the industry. Each week post a tutorial video that seeks to help and support your members.</li>
+<li><strong>Live Q&amp;As</strong>: The <a href="https://www.socialmediaexaminer.com/4-ways-to-broadcast-on-facebook-live-that-fit-any-budget/">live question and answer</a> type activity has become popular in larger groups. As your group grows, you can offer a Q&amp;A session once a week to continue to help and support your group members.</li>
+<li><strong>Quizzes</strong>: <a href="https://www.socialmediaexaminer.com/how-to-generate-leads-with-social-media-quizzes/">Quizzes</a> are fun for group members, and they&#8217;re also helpful to gather data from members of your group. Use quizzes to find out what your next product or service should be by asking members to take the quiz.</li>
+<li><strong>Polls</strong>: Need new content ideas? Create a poll for your group to vote on. Create polls for your next blog title, logo, or type of content for the next month.</li>
+<li><strong>Daily Theme Prompts</strong>: Daily prompts allow group members to post about a certain topic each day. Typically, there&#8217;s a promotional day when group members can share their latest blog post or product. Ask members to post photos of your place of business or product. These daily prompts can be a great way to set expectations for members and give them a chance to share about themselves.</li>
+</ul>
+<div style="border: 2px solid #c9c299; margin: 0pt 0pt 20px; padding: 15px; background-color: #ece5b6;">
+<p><strong>Consider Hiring a Community Manager</strong></p>
+<p>As your group grows and becomes active, you may need to hire a community manager. A community manager will help monitor all posts and comments so you can focus on the weekly objectives of the group. Most community managers are found inside the group. You&#8217;ll likely have one or two group members who are very active and helpful inside the group. They&#8217;re your ideal candidates for helping you manage your time inside the group.</p>
+</div>
+<p><a class="button button-2" href="https://www.socialmediaexaminer.com/facebook-for-business-ultimate-facebook-marketing-guide/">Want more like this? Explore Facebook for Business!</a></p>
+<p><span style="color: #ffffff;">.</span><br />
+<strong>Summary</strong></p>
+<p>Groups can be a powerful way to establish your expertise; create an engaged community; and find new customers, peers, and partners.</p>
+<p><strong>Will you use Facebook groups as part of your marketing strategy? What other questions do you have about Facebook groups?</strong> Let us know in the comments below.</p>
+<div class="995cacb76ddc3c3ec3da9e1f90f42311" data-index="3" style="float: none; margin:10px 0 10px 0; text-align:center;">
+<div class="conference-table-extend">
+<h2 style="text-align: left;">Experience The World's Largest Social Media Conference</h2>
+<img class="alignright wp-image-216272 size-medium" src="https://www.socialmediaexaminer.com/wp-content/uploads/2019/10/SMMWLogoBigger@2x.png" alt="Social Media Marketing World" width="250" height="187" />
+<p style="text-align: left;">Quality marketing training, actionable takeaways, and beneficial connections—that's just a fraction of what you can expect at Social Media Marketing World! Join thousands of smart marketers in sunny San Diego this spring and level up your marketing.</p>
+<p align="center">🔥 <b>Sale ends Wednesday!</b> 🔥
+</p>
+<a class="button button-2" href="https://www.socialmediaexaminer.com/smmworld/?smesite=world22-site-midpage-ad2">GET TICKETS NOW</a>
+</div>
+</div>
+<div style="font-size: 0px; height: 0px; line-height: 0px; margin: 0; padding: 0; clear: both;"></div></div><footer class="entry-footer"><p class="entry-meta"><span class="entry-tags">Tags: <a href="https://www.socialmediaexaminer.com/tag/facebook/" rel="tag">Facebook</a></span></p></footer></article><section class="author-box"><img alt='' src='https://secure.gravatar.com/avatar/4f3cd1c9fa936ba1acfaa315fc1cc130?s=65&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/4f3cd1c9fa936ba1acfaa315fc1cc130?s=130&#038;d=mm&#038;r=g 2x' class='avatar avatar-65 photo' height='65' width='65' loading='lazy' /><h4 class="author-box-title"><span>About the author</span><a href="http://www.themultipassionatepreneur.com/" title="Visit Tammy Cannon&#8217;s website" rel="author external" class="external" target="_blank">Tammy Cannon</a></h4><div class="author-box-content" itemprop="description">Tammy Cannon is a digital marketer focusing on helping creative entrepreneurs create successful marketing funnels and Facebook Ads.<div class="other-posts-link"><a href="https://www.socialmediaexaminer.com/author/tammy-cannon/">Other posts by Tammy Cannon »</a></div></div></section><div class="after-entry widget-area"><section id="custom_html-13" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><div class="after-entry-left">
+<h4> Get Social Media Examiner’s Future Articles in Your Inbox! </h4>
+<p> Get our latest articles delivered to your email inbox and get the <strong>FREE Social Media Marketing Industry Report</strong> (40 pages, 50+ charts)! </p>
+</div>
+<div class="after-entry-right"> <img src="https://www.socialmediaexaminer.com/wp-content/uploads/2021/05/Footer-Report2021.png" width="145" height="200" alt="Industry Report Cover" /> </div>
+<div class="clearfix"> </div>
+<div class="after-entry-bottom">
+<form action="https://www.getdrip.com/forms/50814357/submissions" method="post" data-drip-embedded-form="50814357">
+<input type="text" value="Enter your first name" onfocus="if (this.value == 'Enter your first name') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter your first name';}" id="callout-name" name="fields[first_name]">
+<input type="text" value="Email" onfocus="if (this.value == 'Email') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Email';}" id="callout-email" name="fields[email]">
+<div style="display: none;" aria-hidden="true">
+<label for="website">Website</label>
+<br />
+<input type="text" id="website" name="website" tabindex="-1" autocomplete="false" value="" />
+</div>
+<input type="submit" id="subscribeSubmit" alt="Send me Updates" name="Submit" data-drip-attribute="sign-up-button">
+</form>
+</div>
+</div></div></section>
+</div></main></div></div><div class="wrap"><div class="worth-exploring-section entry"><section id="custom_html-9" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><h3 class="widgettitle widget-title">Worth Exploring:</h3>
+<div class="textwidget custom-html-widget"><a href="https://www.socialmediaexaminer.com/tag/facebook/" class="worth-exploring-item facebook">
+<h4>Facebook</h4>
+<span class="description">Marketing Help</span>
+<span class="link">Explore More →</span>
+<span class="worth-exploring-image"></span>
+</a>
+<a href="https://www.socialmediaexaminer.com/tag/instagram/" class="worth-exploring-item instagram">
+<h4>Instagram</h4>
+<span class="description">Marketing Help</span>
+<span class="link">Explore More →</span>
+<span class="worth-exploring-image"></span>
+</a>
+<a href="https://www.socialmediaexaminer.com/tag/youtube/" class="worth-exploring-item youtube">
+<h4>YouTube</h4>
+<span class="description">Marketing Help</span>
+<span class="link">Explore More →</span>
+<span class="worth-exploring-image"></span>
+</a>
+<a href="https://www.socialmediaexaminer.com/tag/linkedin/" class="worth-exploring-item linkedin">
+<h4>Linkedin</h4>
+<span class="description">Marketing Help</span>
+<span class="link">Explore More →</span>
+<span class="worth-exploring-image"></span>
+</a>
+<a href="https://www.socialmediaexaminer.com/tag/facebook-ads/" class="worth-exploring-item facebook">
+<h4>Facebook Ads</h4>
+<span class="description">Marketing Help</span>
+<span class="link">Explore More →</span>
+<span class="worth-exploring-image"></span>
+</a>
+<a href="https://www.socialmediaexaminer.com/social-media-marketing-industry-report-2021/" class="worth-exploring-item industry">
+<h4>Social Media Marketing Industry Report</h4>
+<span class="link">Get Free Report →</span>
+<span class="worth-exploring-image"></span>
+</a></div></div></section>
+</div></div><div class="main-cta above-footer-cta"><div class="wrap"><div class="main-cta-inner abover-footer-cta-inner"><div class="main-cta-content above-footer-cta-content"><div class="inner-border-radius clearfix"><section id="custom_html-4" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><h4 class="free-tag">
+Social Marketing Trends
+</h4>
+<span class="sub-title">
+The data you've been missing!
+</span>
+<p>
+Need a new plan? Find out how thousands of marketers plan to change their social marketing activities in our 14th annual Social Media Marketing Industry Report. This <strong>40-page report</strong> reveals what marketers have planned for their organic social activities, video marketing, social ads, and more. Get this <strong>free report</strong> now and never miss another great article from Social Media Examiner.
+</p></div></div></section>
+<section id="custom_html-3" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><p>
+Enter your email to get<br />
+our <strong>free report:</strong>
+</p>
+<form action="https://www.getdrip.com/forms/65459763/submissions" method="post" data-drip-embedded-form="65459763" id="drip-ef-65459763">
+<input type="text" value="Enter your first name" onfocus="if (this.value == 'Enter your first name') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Enter your first name';}" id="callout-name" name="fields[first_name]"><input type="text" value="Email" onfocus="if
+(this.value == 'Email') {this.value = '';}" onblur="if (this.value == '')
+{this.value = 'Email';}" id="callout-email" name="fields[email]">
+<div style="display: none;" aria-hidden="true"> <label for="website">Website</label><br /> <input type="text" id="website" name="website" tabindex="-1" autocomplete="false" value="" /> </div>
+<input type="submit" alt="SEND ME A COPY" value="SEND ME A COPY" name="Submit" id="callout-submit" data-drip-attribute="sign-up-button"></form></div></div></section>
+</div></div></div></div></div><div class="footer-widgets" id="genesis-footer-widgets"><h2 class="genesis-sidebar-title screen-reader-text">Footer</h2><div class="wrap"><div class="widget-area footer-widgets-1 footer-widget-area"><section id="custom_html-11" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><img src="https://www.socialmediaexaminer.com/wp-content/themes/sme-pro/images/logo@2x.png" width="353" height="118" />
+<span class="footer-tag">
+Your Guide to the Social Media Jungle
+</span></div></div></section>
+<section id="custom_html-10" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget">Copyright &#x000A9;&nbsp;2022 Social Media Examiner®<br />
+All Rights Reserved. <a href="/terms-of-use/">Terms of Use</a> | <a href="/privacy/">Privacy Policy</a>.</div></div></section>
+</div><div class="widget-area footer-widgets-2 footer-widget-area"><section id="nav_menu-4" class="widget widget_nav_menu"><div class="widget-wrap"><h3 class="widgettitle widget-title">Helpful Links</h3>
+<div class="menu-footer-links-container"><ul id="menu-footer-links" class="menu"><li id="menu-item-192784" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-192784"><a href="https://www.socialmediaexaminer.com/about/">About us</a></li>
+<li id="menu-item-95057" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95057"><a href="https://www.socialmediaexaminer.com/subscribe/">Our content via email</a></li>
+<li id="menu-item-110706" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-110706"><a href="https://www.socialmediaexaminer.com/shows/">Our podcasts</a></li>
+<li id="menu-item-139031" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-139031"><a href="https://www.youtube.com/socialmediaexaminer?sub_confirmation=1" class="external" target="_blank">Our YouTube channel</a></li>
+<li id="menu-item-110705" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-110705"><a href="https://www.socialmediaexaminer.com/social-media-marketing-talk-show/">Our live show</a></li>
+<li id="menu-item-123595" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-123595"><a href="https://www.socialmediaexaminer.com/social-media-marketing-industry-report-2021/">Our industry report</a></li>
+<li id="menu-item-95056" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95056"><a href="https://www.socialmediaexaminer.com/sponsor/">Sponsorship opportunities</a></li>
+<li id="menu-item-95055" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95055"><a href="https://www.socialmediaexaminer.com/writers/">Write for us&#8230;</a></li>
+<li id="menu-item-168981" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-168981"><a href="https://www.socialmediaexaminer.com/feed/">RSS</a></li>
+<li id="menu-item-200104" class="show-userway menu-item menu-item-type-custom menu-item-object-custom menu-item-200104"><a title="Turn on accessibility menu" href="?accessibility=enabled">Accessibility</a></li>
+</ul></div></div></section>
+</div><div class="widget-area footer-widgets-3 footer-widget-area"><section id="custom_html-12" class="widget_text widget widget_custom_html"><div class="widget_text widget-wrap"><div class="textwidget custom-html-widget"><a href="https://www.facebook.com/smexaminer" target="_blank" rel="noopener" class="external">
+<img width="44" height="44" src="https://www.socialmediaexaminer.com//wp-content/themes/sme-pro/images/social/facebook@2x.png" />
+</a>
+<a href="https://twitter.com/smexaminer" target="_blank" rel="noopener" class="external">
+<img width="44" height="44" src="https://www.socialmediaexaminer.com//wp-content/themes/sme-pro/images/social/twitter@2x.png" />
+</a>
+<a href="https://www.youtube.com/socialmediaexaminer?sub_confirmation=1" target="_blank" rel="noopener" class="external">
+<img width="44" height="44" src="https://www.socialmediaexaminer.com//wp-content/themes/sme-pro/images/social/youtube@2x.png" />
+</a>
+<a href="https://www.instagram.com/smexaminer/" target="_blank" rel="noopener" class="external">
+<img width="44" height="44" src="https://www.socialmediaexaminer.com//wp-content/themes/sme-pro/images/social/instagram@2x.png" />
+</a>
+<a href="https://www.linkedin.com/company/576649" target="_blank" rel="noopener" class="external">
+<img width="44" height="44" src="https://www.socialmediaexaminer.com//wp-content/themes/sme-pro/images/social/linkedin@2x.png" />
+</a>
+<a href="https://www.joinclubhouse.com/club/socialmediaexaminer" target="_blank" rel="noopener" class="external">
+<img width="44" height="44" src="https://www.socialmediaexaminer.com/wp-content/uploads/2021/03/clubhouse_code@2x.png" />
+</a>
+</div></div></section>
+</div></div></div> <a href="#" class="back-to-top">
+</a>
+</div> <script type="rocketlazyloadscript">window.addEventListener('DOMContentLoaded', function() {
+                jQuery(function($){
+                                        try {
+                        $('a.wpdm-lightbox').nivoLightbox();
+                    } catch (e) {
+
+                    }
+                });
+            });</script>
+<div id="fb-root"></div>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" src="https://a.omappapi.com/app/js/api.min.js" data-campaign="bsdm1jzjjigswzchj9zt" data-user="100" async></script> <script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+			document.addEventListener("userway:init_completed", function(event) {
+			    UserWay.widgetOpen();
+			});
+		</script>
+
+<script type="rocketlazyloadscript">(function(d,u,ac,a){var s=d.createElement('script');s.type='text/javascript';s.src='https://ca9707.socialmediaexaminer.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;s.dataset.api=a;d.getElementsByTagName('head')[0].appendChild(s);})(document,100,'m3fykothrphva0k2pj8l','aa9705');</script>
+
+<script type="rocketlazyloadscript">(function(d,u,ac,a){var s=d.createElement('script');s.type='text/javascript';s.src='https://ca9707.socialmediaexaminer.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;s.dataset.api=a;d.getElementsByTagName('head')[0].appendChild(s);})(document,100,'dct1qvxultdgdb956xwd','aa9705');</script>
+
+<script type="rocketlazyloadscript">(function(d,u,ac,a){var s=d.createElement('script');s.type='text/javascript';s.src='https://ca9707.socialmediaexaminer.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;s.dataset.api=a;d.getElementsByTagName('head')[0].appendChild(s);})(document,100,'mm9lmlsi1gllayehygew','aa9705');</script>
+
+<script type="rocketlazyloadscript">(function(d,u,ac,a){var s=d.createElement('script');s.type='text/javascript';s.src='https://ca9707.socialmediaexaminer.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;s.dataset.api=a;d.getElementsByTagName('head')[0].appendChild(s);})(document,100,'pdtiyhq6jzruwsnol5xc','aa9705');</script>
+
+<script type="rocketlazyloadscript">(function(d,u,ac,a){var s=d.createElement('script');s.type='text/javascript';s.src='https://ca9707.socialmediaexaminer.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;s.dataset.api=a;d.getElementsByTagName('head')[0].appendChild(s);})(document,100,'rqlcf0vt6cilmjydo9jj','aa9705');</script>
+
+<script type="rocketlazyloadscript">(function(d,u,ac,a){var s=d.createElement('script');s.type='text/javascript';s.src='https://ca9707.socialmediaexaminer.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;s.dataset.api=a;d.getElementsByTagName('head')[0].appendChild(s);})(document,100,'hnettihys3ykimy7ks56','aa9705');</script>
+
+<script type="rocketlazyloadscript">(function(d,u,ac,a){var s=d.createElement('script');s.type='text/javascript';s.src='https://ca9707.socialmediaexaminer.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;s.dataset.api=a;d.getElementsByTagName('head')[0].appendChild(s);})(document,100,'pgfozdcetvfz5sriccpd','aa9705');</script>
+
+<script type="rocketlazyloadscript">(function(d,u,ac,a){var s=d.createElement('script');s.type='text/javascript';s.src='https://ca9707.socialmediaexaminer.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;s.dataset.api=a;d.getElementsByTagName('head')[0].appendChild(s);})(document,100,'bcatypb5i6v5sehhm0yz','aa9705');</script>
+
+<script type="rocketlazyloadscript">(function(d,u,ac,a){var s=d.createElement('script');s.type='text/javascript';s.src='https://ca9707.socialmediaexaminer.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;s.dataset.api=a;d.getElementsByTagName('head')[0].appendChild(s);})(document,100,'xvhh5zw4q2qjna8nshme','aa9705');</script>
+
+<script type="rocketlazyloadscript">(function(d,u,ac,a){var s=d.createElement('script');s.type='text/javascript';s.src='https://ca9707.socialmediaexaminer.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;s.dataset.api=a;d.getElementsByTagName('head')[0].appendChild(s);})(document,100,'dzugpznjtw1vvferbkxt','aa9705');</script>
+
+<script type="rocketlazyloadscript">(function(d,u,ac,a){var s=d.createElement('script');s.type='text/javascript';s.src='https://ca9707.socialmediaexaminer.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;s.dataset.api=a;d.getElementsByTagName('head')[0].appendChild(s);})(document,100,'cntmysc4bcaqxdmmvb7r','aa9705');</script>
+
+<script type="rocketlazyloadscript">(function(d,u,ac,a){var s=d.createElement('script');s.type='text/javascript';s.src='https://ca9707.socialmediaexaminer.com/app/js/api.min.js';s.async=true;s.dataset.user=u;s.dataset.campaign=ac;s.dataset.api=a;d.getElementsByTagName('head')[0].appendChild(s);})(document,100,'uma2rxjkoqpsljuwurt9','aa9705');</script>
+ <script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+		var m3fykothrphva0k2pj8l_shortcode = true;var dct1qvxultdgdb956xwd_shortcode = true;var mm9lmlsi1gllayehygew_shortcode = true;var pdtiyhq6jzruwsnol5xc_shortcode = true;var rqlcf0vt6cilmjydo9jj_shortcode = true;var hnettihys3ykimy7ks56_shortcode = true;var pgfozdcetvfz5sriccpd_shortcode = true;var bcatypb5i6v5sehhm0yz_shortcode = true;var xvhh5zw4q2qjna8nshme_shortcode = true;var dzugpznjtw1vvferbkxt_shortcode = true;var cntmysc4bcaqxdmmvb7r_shortcode = true;var uma2rxjkoqpsljuwurt9_shortcode = true;		</script>
+<link rel='stylesheet' id='sme-calluna-font-css' href='https://use.typekit.net/hvy7swx.css?ver=0.4.6' type='text/css' media='all' />
+<script type='text/javascript' src='https://www.socialmediaexaminer.com/wp-includes/js/hoverIntent.min.js?ver=1.10.2' id='hoverIntent-js' defer></script>
+<script type='text/javascript' src='https://www.socialmediaexaminer.com/wp-content/themes/genesis/lib/js/menu/superfish.min.js?ver=1.7.10' id='superfish-js' defer></script>
+<script type='text/javascript' src='https://www.socialmediaexaminer.com/wp-content/themes/genesis/lib/js/menu/superfish.args.min.js?ver=3.3.5' id='superfish-args-js' defer></script>
+<script type='text/javascript' src='https://www.socialmediaexaminer.com/wp-content/themes/genesis/lib/js/skip-links.min.js?ver=3.3.5' id='skip-links-js' defer></script>
+<script type='text/javascript' id='sme-responsive-menu-js-extra'>
+/* <![CDATA[ */
+var genesis_responsive_menu = {"mainMenu":"","menuIconClass":"ionicons-before ion-ios-menu","subMenu":"Submenu","subMenuIconClass":"ionicons-before ion-ios-arrow-down","menuClasses":{"combine":[".nav-primary"],"others":[]}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://www.socialmediaexaminer.com/wp-content/themes/sme-pro/lib/js/min/responsive-menus.min.js?ver=0.4.6' id='sme-responsive-menu-js' defer></script>
+<script type='text/javascript' src='https://www.socialmediaexaminer.com/wp-content/themes/sme-pro/lib/js/src/global.js?ver=0.4.6' id='sme-js' defer></script>
+<script type='text/javascript' src='https://www.socialmediaexaminer.com/wp-content/themes/sme-pro/lib/js/min/jquery.matchHeight.min.js?ver=0.4.6' id='sme-match-height-js' defer></script>
+<script type='text/javascript' src='https://www.socialmediaexaminer.com/wp-content/themes/sme-pro/lib/js/src/top-banner.js?ver=0.4.6' id='sme-top-banner-js' defer></script>
+<script type="rocketlazyloadscript">(function(d){var s=d.createElement("script");s.type="text/javascript";s.src="https://ca9707.socialmediaexaminer.com/app/js/api.min.js";s.async=true;s.id="omapi-script";s.dataset.api="aa9705";d.getElementsByTagName("head")[0].appendChild(s);})(document);</script><script type='text/javascript' src='https://www.socialmediaexaminer.com/wp-content/plugins/optinmonster/assets/js/helper.js?ver=2.6.9' id='optinmonster-wp-helper-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">var omapi_localized = {
+			ajax: 'https://www.socialmediaexaminer.com/wp-admin/admin-ajax.php?optin-monster-ajax-route=1',
+			nonce: '2b79338de0',
+			slugs: 
+			{"m3fykothrphva0k2pj8l":{"slug":"m3fykothrphva0k2pj8l","mailpoet":false},"dct1qvxultdgdb956xwd":{"slug":"dct1qvxultdgdb956xwd","mailpoet":false},"mm9lmlsi1gllayehygew":{"slug":"mm9lmlsi1gllayehygew","mailpoet":false},"pdtiyhq6jzruwsnol5xc":{"slug":"pdtiyhq6jzruwsnol5xc","mailpoet":false},"rqlcf0vt6cilmjydo9jj":{"slug":"rqlcf0vt6cilmjydo9jj","mailpoet":false},"hnettihys3ykimy7ks56":{"slug":"hnettihys3ykimy7ks56","mailpoet":false},"pgfozdcetvfz5sriccpd":{"slug":"pgfozdcetvfz5sriccpd","mailpoet":false},"bcatypb5i6v5sehhm0yz":{"slug":"bcatypb5i6v5sehhm0yz","mailpoet":false},"xvhh5zw4q2qjna8nshme":{"slug":"xvhh5zw4q2qjna8nshme","mailpoet":false},"dzugpznjtw1vvferbkxt":{"slug":"dzugpznjtw1vvferbkxt","mailpoet":false},"cntmysc4bcaqxdmmvb7r":{"slug":"cntmysc4bcaqxdmmvb7r","mailpoet":false},"uma2rxjkoqpsljuwurt9":{"slug":"uma2rxjkoqpsljuwurt9","mailpoet":false}}		};</script>
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">var omapi_data = {"wc_cart":[],"object_id":133260,"object_key":"post","object_type":"post","term_ids":[1,74]};</script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","licenseKey":"9537276cb2","applicationID":"6974453","transactionName":"ZlFUYkBYXRcDUkNcX18bd1VGUFwKTUJeW1ddUQ==","queueTime":0,"applicationTime":407,"atts":"ShZXFAhCThk=","errorBeacon":"bam-cell.nr-data.net","agent":""}</script><script type="text/javascript">(function(){window['__CF$cv$params']={r:'6e288fccfc044a08',m:'kSIcwPuJmPMR7ch9TuIQLaBPa1cM2Ir_ug.g0YTTt_0-1645704322-0-AfeLIR8YcqQOtAL5XHianc3yD+JIUITpkfgH9NTOJM+J3ljw9gAZH8ujyo8A9z6CJ/Fyz+b9MOT87Qv52ZRdRj28Fi7ArZnEe4D/l2qvcTUpVxKB/Lg4zLzvXUecu0mbLiicpY4hmLJA7P7QdIEt3bmOCk8y3TdZwZiZy6BhnszT6nY9rwtvRo5GQ/SV/RuOZA==',s:[0x5eeae3c8b5,0xe636c070e2],}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"6e288fccfc044a08","token":"fa32439e90be415cae144b7e5532c22b","version":"2021.12.0","si":100}' crossorigin="anonymous"></script>
+</body></html>
